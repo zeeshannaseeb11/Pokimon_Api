@@ -1,0 +1,25 @@
+.form-component {
+  display: flex;
+  align-items: start;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.form-component .li-card {
+  width: 100%;
+}
+
+.form-component h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.form-component input {
+  width: 100%;
+  border: 1px solid grey;
+  border-radius: 12px;
+  outline: none;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+/*  p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600" */

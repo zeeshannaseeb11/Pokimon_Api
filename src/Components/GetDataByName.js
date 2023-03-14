@@ -3,6 +3,7 @@ import DisplayList from "./DisplayList";
 
 function GetDataByName(props) {
   const [data, setData] = useState([]);
+  
 
   useEffect(() => {
     const getDatabyName = async () => {

@@ -1,29 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { captitalizeFirstLetter } from "../helper/capitalizeFirstLetter";
-
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { FiArrowRight } from "react-icons/fi";
-
 import "./DisplayList.css";
+import { FavoritesContext } from "../Context/fav-context";
 
 function DisplayList(props) {
+  const favoriteCtx = useContext(FavoritesContext);
   const navigate = useNavigate();
-  const [favorite, setFavorite] = useState(false);
 
   const favHandler = (e, data) => {
-    // check if there are some favourites
-    const existingFavourites =
-      JSON.parse(localStorage.getItem("favourites")) || [];
-
-    // Add pokemons to array
-    existingFavourites.push(data);
-
-    // Save the updated favourites back to local storage
-    localStorage.setItem("favourites", JSON.stringify(existingFavourites));
-
-    setFavorite(true);
+    favoriteCtx.toggleFavHandler(data);
   };
+
+  const cardIsFav = favoriteCtx.ids.includes(props.data.id);
 
   return (
     <li className="li-card">
@@ -41,8 +32,8 @@ function DisplayList(props) {
           className="favorite-btn"
           onClick={(e) => favHandler(e, props.data)}
         >
-          {!favorite && <AiOutlineStar style={{ fontSize: "23px" }} />}
-          {favorite && <AiFillStar style={{ fontSize: "23px" }} />}
+          {!cardIsFav && <AiOutlineStar style={{ fontSize: "23px" }} />}
+          {cardIsFav && <AiFillStar style={{ fontSize: "23px" }} />}
         </button>
       </div>
       <div className="card-desc">

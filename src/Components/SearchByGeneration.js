@@ -9,6 +9,9 @@ function SearchByGeneration(props) {
     <div className="filter">
       <h2>Filters</h2>
       <select onChange={changeHandler}>
+        <option value="" disabled selected hidden>
+          Select Generation
+        </option>
         <option value="1">generation 1</option>
         <option value="2">generation 2</option>
         <option value="3">generation 3</option>

@@ -11,6 +11,15 @@ function NavigationActions() {
   return (
     <div className="navigation-cont">
       <button
+        className="navigation-btn com-btn "
+        onClick={() => {
+          navigate("/compare");
+        }}
+      >
+        Compare
+        <BiGitCompare style={{ color: "blue", marginLeft: "8px" }} />
+      </button>
+      <button
         className="navigation-btn fav-btn"
         onClick={() => {
           navigate("/favourite");

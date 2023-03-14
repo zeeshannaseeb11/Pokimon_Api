@@ -7,8 +7,6 @@ import { captitalizeFirstLetter } from "../helper/capitalizeFirstLetter";
 import "./Details.css";
 function Details() {
   const { state } = useLocation();
-  const navigate = useNavigate();
-  console.log(state);
 
   return (
     <>
